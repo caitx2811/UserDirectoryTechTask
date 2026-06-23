@@ -1,5 +1,6 @@
 import User from "./User.jsx";
 import users from "../users.js";
+import "../table.css";
 
 export default function Table() {
   const userData = users.map((user) => {
@@ -7,15 +8,15 @@ export default function Table() {
   });
   return (
     <>
-      <table>
-        <thead>
+      <table className="user-table">
+        <thead className="user-table-head">
           <tr>
             <th>Name</th>
             <th>Role</th>
             <th>Active</th>
           </tr>
         </thead>
-        <tbody>{userData}</tbody>
+        <tbody className="user-table-body">{userData}</tbody>
       </table>
     </>
   );
