@@ -29,3 +29,7 @@ td {
   padding: 10px;
   min-width: 300px;
 }
+
+.no-search-results {
+  text-align: center;
+}

@@ -26,7 +26,15 @@ export default function Table({ search, activeStatus }) {
             <th>Active Status</th>
           </tr>
         </thead>
-        <tbody className="user-table-body">{userData}</tbody>
+        <tbody className="user-table-body">
+          {userData.length > 0 ? (
+            userData
+          ) : (
+            <tr>
+              <td className="no-search-results" colSpan={3}>No users match the search filters you have selected.</td>
+            </tr>
+          )}
+        </tbody>
       </table>
     </>
   );
