@@ -4,7 +4,7 @@ export default function User(props) {
     <tr>
       <th scope="row">{props.user.name}</th>
       <td>{props.user.role}</td>
-      {isActive ? <td>Active</td> : <td>Inactive</td>}
+      <td>{isActive? "Active" : "Inactive"}</td>
     </tr>
   );
 }
