@@ -16,6 +16,9 @@ export default function Table({ search, activeStatus }) {
     })
     .map((user) => <User key={user.id} user={user} />);
 
+  console.log(users.length);
+  console.log(userData.length);
+
   return (
     <>
       <table className="user-table">
@@ -31,11 +34,19 @@ export default function Table({ search, activeStatus }) {
             userData
           ) : (
             <tr>
-              <td className="no-search-results" colSpan={3}>No users match the search filters you have selected.</td>
+              <td className="no-search-results" colSpan={3}>
+                No users match the search filters you have selected.
+              </td>
             </tr>
           )}
         </tbody>
       </table>
+
+      {(userData.length > 0 && userData.length < users.length) && (
+        <p colSpan={3}>
+          Showing {userData.length} of {users.length} users.
+        </p>
+      )}
     </>
   );
 }
