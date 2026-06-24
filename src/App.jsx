@@ -1,11 +1,14 @@
 import Table from "./components/Table";
-import SearchUsers from "./components/SearchUsers"
+import { useState } from 'react';
+import SearchUsers from "./components/SearchUsers";
 
 function App() {
+  const [search, setSearch] = useState("");
+
   return (
     <>
-      <SearchUsers />
-      <Table />
+      <SearchUsers search={search} setSearch={setSearch} />
+      <Table search={search} />
     </>
   );
 }
