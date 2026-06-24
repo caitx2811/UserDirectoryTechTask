@@ -1,7 +1,7 @@
 export default function FilterByActive({activeStatus, setActiveStatus}) {
   return (
-    <form className="search-for-user">
-      <label htmlFor="selectActive" className="search-label">
+    <form className="active-select">
+      <label htmlFor="selectActive" className="active-label">
         Filter by Active status
         <select id="selectActive" name="selectedActivity" value={activeStatus}
         onChange={(e) => setActiveStatus(e.target.value)}>

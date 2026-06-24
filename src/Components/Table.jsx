@@ -2,7 +2,7 @@ import User from "./User.jsx";
 import users from "../users.js";
 import "../table.css";
 
-export default function Table({ search, activeStatus }) {
+export default function Table({ search, activeStatus, selectedRole }) {
   const userData = users
     .filter((user) => {
       return (
@@ -11,7 +11,8 @@ export default function Table({ search, activeStatus }) {
           ? user.active
           : activeStatus === "inactive"
             ? !user.active
-            : user)
+            : user) &&
+        (selectedRole === "all" || selectedRole === user.role.toLowerCase())
       );
     })
     .map((user) => <User key={user.id} user={user} />);
@@ -42,7 +43,7 @@ export default function Table({ search, activeStatus }) {
         </tbody>
       </table>
 
-      {(userData.length > 0 && userData.length < users.length) && (
+      {userData.length > 0 && userData.length < users.length && (
         <p colSpan={3}>
           Showing {userData.length} of {users.length} users.
         </p>
