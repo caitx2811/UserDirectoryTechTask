@@ -1,0 +1,21 @@
+.search-for-user {
+  display: flex;
+  gap: 10px;
+}
+
+.search-label, .filter-label {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.filter-select {
+    margin-left: 10px;
+    height: 2rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  align-items: center;
+}

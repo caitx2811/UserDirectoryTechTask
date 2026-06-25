@@ -1,8 +1,7 @@
 import Table from "./components/Table";
 import { useState } from "react";
-import SearchUsers from "./components/SearchUsers";
-import FilterByActive from "./components/FilterByActive";
-import FilterByRole from "./components/FilterByRole";
+import Filters from "./components/Filters";
+import Header from "./components/Header";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -13,12 +12,12 @@ function App() {
 
   return (
     <>
-      <SearchUsers search={search} setSearch={setSearch} />
-      <FilterByActive
+    <Header />
+      <Filters
+        search={search}
+        setSearch={setSearch}
         activeStatus={activeStatus}
         setActiveStatus={setActiveStatus}
-      />
-      <FilterByRole
         selectedRole={selectedRole}
         setSelectedRole={setSelectedRole}
       />

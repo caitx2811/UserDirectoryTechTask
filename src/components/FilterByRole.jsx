@@ -1,9 +1,11 @@
+import "../filters.css"
+
 export default function FilterByRole({selectedRole, setSelectedRole}) {
   return (
-    <form className="role-select">
-      <label htmlFor="selectRole" className="role-label">
-        Filter by user's role
-        <select id="selectRole" name="selectedRole" value={selectedRole}
+    <form className="role-select" className="filter">
+      <label htmlFor="selectRole" className="filter-label">
+        Filter by Role
+        <select id="selectRole" className="filter-select" name="selectedRole" value={selectedRole}
         onChange={(e) => setSelectedRole(e.target.value)}>
           <option value="all" defaultValue>All</option>
           <option value="admin">Admin</option>

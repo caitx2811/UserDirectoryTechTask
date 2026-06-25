@@ -17,9 +17,6 @@ export default function Table({ search, activeStatus, selectedRole }) {
     })
     .map((user) => <User key={user.id} user={user} />);
 
-  console.log(users.length);
-  console.log(userData.length);
-
   return (
     <>
       <table className="user-table">

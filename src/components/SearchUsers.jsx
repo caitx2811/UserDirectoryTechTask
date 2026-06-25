@@ -1,10 +1,10 @@
-import "../SearchUsers.css";
+import "../filters.css"
 
 export default function SearchUsers({ search, setSearch }) {
   return (
     <form className="search-for-user">
       <label htmlFor="searchInput" className="search-label">
-        Search for a user by name
+        Search for User
       </label>
       <input
         id="searchInput"
