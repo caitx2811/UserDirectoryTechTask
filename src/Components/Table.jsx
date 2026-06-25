@@ -1,21 +1,10 @@
 import User from "./User.jsx";
 import users from "../users.js";
 import "../table.css";
+import { filterUsers } from "../helpers/filterUsersHelper";
 
 export default function Table({ search, activeStatus, selectedRole }) {
-  const userData = users
-    .filter((user) => {
-      return (
-        (search === "" ? user : user.name.toLowerCase().includes(search)) &&
-        (activeStatus === "active"
-          ? user.active
-          : activeStatus === "inactive"
-            ? !user.active
-            : user) &&
-        (selectedRole === "all" || selectedRole === user.role.toLowerCase())
-      );
-    })
-    .map((user) => <User key={user.id} user={user} />);
+  const userData = filterUsers(users, search, activeStatus, selectedRole);
 
   return (
     <>
@@ -29,7 +18,7 @@ export default function Table({ search, activeStatus, selectedRole }) {
         </thead>
         <tbody className="user-table-body">
           {userData.length > 0 ? (
-            userData
+            userData.map((user) => <User key={user.id} user={user} />)
           ) : (
             <tr>
               <td className="no-search-results" colSpan={3}>
