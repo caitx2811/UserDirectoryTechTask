@@ -1,4 +1,4 @@
-import "../filters.css"
+import "../css/filters.css"
 
 export default function FilterByActive({activeStatus, setActiveStatus}) {
   return (

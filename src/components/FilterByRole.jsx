@@ -1,4 +1,4 @@
-import "../filters.css"
+import "../css/filters.css"
 
 export default function FilterByRole({selectedRole, setSelectedRole}) {
   return (

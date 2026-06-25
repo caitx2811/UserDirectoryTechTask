@@ -1,6 +1,6 @@
 import User from "./User.jsx";
 import users from "../users.js";
-import "../table.css";
+import "../css/table.css";
 import { filterUsers } from "../helpers/filterUsersHelper";
 
 export default function Table({ search, activeStatus, selectedRole }) {
